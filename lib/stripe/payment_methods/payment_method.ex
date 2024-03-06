@@ -118,7 +118,9 @@ defmodule Stripe.PaymentMethod do
                :type => String.t(),
                optional(:billing_details) => billing_details(),
                optional(:card) => card(),
-               optional(:metadata) => Stripe.Types.metadata()
+               optional(:customer) => String.t(),
+               optional(:metadata) => Stripe.Types.metadata(),
+               optional(:payment_method) => String.t()
              }
   def create(%{} = params, opts \\ []) do
     new_request(opts)
