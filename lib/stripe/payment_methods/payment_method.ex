@@ -115,7 +115,39 @@ defmodule Stripe.PaymentMethod do
   """
   @spec create(params, Stripe.options()) :: {:ok, t} | {:error, Stripe.Error.t()}
         when params: %{
-               :type => String.t(),
+               optional(:type) =>
+                 :acss_debit
+                 | :affirm
+                 | :afterpay_clearpay
+                 | :alipay
+                 | :au_becs_debit
+                 | :bacs_debit
+                 | :bancontact
+                 | :blik
+                 | :boleto
+                 | :card
+                 | :cashapp
+                 | :customer_balance
+                 | :eps
+                 | :fpx
+                 | :giropay
+                 | :grabpay
+                 | :ideal
+                 | :klarna
+                 | :konbini
+                 | :link
+                 | :oxxo
+                 | :p24
+                 | :paynow
+                 | :paypal
+                 | :pix
+                 | :promptpay
+                 | :revolut_pay
+                 | :sepa_debit
+                 | :sofort
+                 | :us_bank_account
+                 | :wechat_pay
+                 | :zip,
                optional(:billing_details) => billing_details(),
                optional(:card) => card(),
                optional(:customer) => String.t(),
