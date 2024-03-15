@@ -198,7 +198,7 @@ defmodule Stripe.PaymentMethod do
   @spec list(params, Stripe.options()) :: {:ok, Stripe.List.t(t)} | {:error, Stripe.Error.t()}
         when params: %{
                :customer => Stripe.id() | Stripe.Customer.t(),
-               :type => String.t(),
+               optional(:type) => String.t(),
                optional(:ending_before) => t | Stripe.id(),
                optional(:limit) => 1..100,
                optional(:starting_after) => t | Stripe.id()
